@@ -2,5 +2,5 @@
   "semi": false,
   "singleQuote": true,
   "htmlWhitespaceSensitivity": "ignore",
-  "trailingComma": "all"
+  "trailingComma": "es5"
 }
