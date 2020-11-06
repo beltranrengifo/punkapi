@@ -10,8 +10,13 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "sass-resources-loader": "^2.1.1",
+    "style-resources-loader": "^1.3.3",
     "vue": "^2.6.11",
+    "vue-jest": "^3.0.7",
+    "vuetify": "^2.2.11",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -29,8 +34,12 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "jest-serializer-vue": "^2.0.2",
     "node-sass": "^4.12.0",
+    "sass": "^1.19.0",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-cli-plugin-vuetify": "~2.0.7",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.3.0"
   }
 }
