@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Main should match the snapshot 1`] = `
+<main>
+  <pa-grid-stub
+    items="[object Object],[object Object]"
+  />
+</main>
+`;
