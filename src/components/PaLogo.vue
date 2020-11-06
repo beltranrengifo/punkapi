@@ -93,29 +93,27 @@ export default {
 <style lang="scss" scoped>
 .pa-logo {
   &__bottle {
-    width: rem(12);
+    width: rem(40);
+    height: rem(162);
     transform-style: preserve-3d;
     animation: spin 5s linear infinite;
-    position: absolute;
-    top: 8px;
-    left: rem(16);
   }
   &__bottle-face {
     position: absolute;
-    width: rem(12);
+    width: rem(40);
     &:first-child {
-      transform: translateZ(-6px) rotateY(180deg);
+      transform: translateZ(-20px) rotateY(180deg);
     }
     &:nth-child(2) {
-      transform: rotateY(-270deg) translateX(6px);
+      transform: rotateY(-270deg) translateX(20px);
       transform-origin: top right;
     }
     &:nth-child(3) {
-      transform: rotateY(270deg) translateX(-6px);
+      transform: rotateY(270deg) translateX(-20px);
       transform-origin: center left;
     }
     &:nth-child(4) {
-      transform: translateZ(6px);
+      transform: translateZ(20px);
     }
   }
   &__item-label {
