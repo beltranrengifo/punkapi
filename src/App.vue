@@ -30,7 +30,6 @@ export default {
 
   data() {
     return {
-      DEFAULT_TITLE: 'PunkApi Catalogue',
       pageNum: 1,
     }
   },
@@ -44,7 +43,7 @@ export default {
 
   methods: {
     setTitle() {
-      document.title = this.DEFAULT_TITLE
+      document.title = this.$store.state.common.DEFAULT_TITLE
     },
 
     ...mapActions({
