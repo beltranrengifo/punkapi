@@ -17,7 +17,14 @@ describe('App', () => {
 
   beforeEach(() => {
     actions = { 'punkapi/fetchBeers': jest.fn() }
-    store = new Vuex.Store({ actions })
+    store = new Vuex.Store({
+      state: {
+        common: {
+          DEFAULT_TITLE: 'PunkApi',
+        },
+      },
+      actions,
+    })
     wrapper = shallowMount(App, { localVue, store })
   })
 
