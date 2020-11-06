@@ -6,7 +6,7 @@ const state = () => ({
 })
 
 const getters = {
-  getAllBeers(state) {
+  getBeers(state) {
     return state.beers
   },
 }
