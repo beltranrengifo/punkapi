@@ -11,19 +11,16 @@ Vue.use(Vuetify)
 localVue.use(Vuex)
 
 describe('App', () => {
-  let actions
   let store
   let wrapper
 
   beforeEach(() => {
-    actions = { 'punkapi/fetchBeers': jest.fn() }
     store = new Vuex.Store({
       state: {
         common: {
           DEFAULT_TITLE: 'PunkApi',
         },
       },
-      actions,
     })
     wrapper = shallowMount(App, { localVue, store })
   })
@@ -34,9 +31,5 @@ describe('App', () => {
 
   it('App should match the snapshot', () => {
     expect(wrapper.element).toMatchSnapshot()
-  })
-
-  it('Dispatches fetchBeers when instance is created', () => {
-    expect(actions['punkapi/fetchBeers']).toHaveBeenCalled()
   })
 })
