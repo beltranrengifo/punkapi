@@ -1,40 +1,35 @@
 <template>
-  <div class="pa-header">
-    <v-app-bar app flat color="var(--color-soft)">
-      <pa-logo />
-      <v-spacer />
-      <v-btn icon @click="handleDrawer">
-        <v-icon>{{ setIcon }}</v-icon>
-      </v-btn>
-    </v-app-bar>
-  </div>
+  <header class="pa-header">
+    <pa-logo />
+    <pa-title
+      :text="$store.state.common.DEFAULT_TITLE"
+      use-line
+      tag="h1"
+      upper
+    />
+  </header>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
 import PaLogo from '@/components/PaLogo'
+import PaTitle from '@/components/PaTitle'
 
 export default {
   name: 'PaHeader',
 
   components: {
     PaLogo,
-  },
-
-  methods: {
-    ...mapMutations({
-      handleDrawer: 'common/HANDLE_DRAWER',
-    }),
-  },
-
-  computed: {
-    setIcon() {
-      return this.$store.state.common.showDrawer
-        ? 'mdi-arrow-collapse-right'
-        : 'mdi-dots-vertical'
-    },
+    PaTitle,
   },
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.pa-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: rem(32) 0;
+}
+</style>
