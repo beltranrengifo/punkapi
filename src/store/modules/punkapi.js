@@ -2,6 +2,7 @@ import http from '@/utils/http'
 
 const state = () => ({
   beers: [],
+  pageNum: 1,
 })
 
 const getters = {
@@ -11,9 +12,9 @@ const getters = {
 }
 
 const actions = {
-  async fetchBeers({ commit }, { pageNum }) {
+  async fetchBeers({ commit, state }) {
     try {
-      const { data } = await http().get(`/beers?page=${pageNum}&per_page=20`)
+      const { data } = await http().get(`/beers?page=${state.pageNum}&per_page=20`)
       commit('SET_BEERS', data)
     } catch (e) {
       console.error(e)
