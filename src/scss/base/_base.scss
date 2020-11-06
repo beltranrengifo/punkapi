@@ -1,0 +1,40 @@
+body {
+  font-family: $body-font-family;
+  font-size: $--font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: none;
+  scrollbar-width: none;
+  background-color: var(--color-white);
+  transition: var(--theme-base-transition);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.04em;
+  font-weight: 700;
+  letter-spacing: 0.675px;
+}
+
+h1 {
+  font-size: rem(32);
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

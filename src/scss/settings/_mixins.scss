@@ -1,0 +1,6 @@
+/* Converts px in rem.
+   ex: margin: rem(10) rem(20);
+*/
+@function rem($pixels, $context: 16) {
+  @return #{$pixels/$context}rem;
+}

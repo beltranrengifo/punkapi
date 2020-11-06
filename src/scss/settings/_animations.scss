@@ -1,0 +1,31 @@
+@keyframes spin {
+  0% {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes color-change {
+  0% {
+    fill: #6cb150;
+  }
+
+  25% {
+    fill: #00b0e0;
+  }
+
+  50% {
+    fill: #ffc04c;
+  }
+
+  75% {
+    fill: #ec5739;
+  }
+
+  to {
+    fill: #6cb150;
+  }
+}

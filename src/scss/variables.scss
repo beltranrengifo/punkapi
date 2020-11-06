@@ -1,0 +1,21 @@
+:root {
+  --color-base: #0a0a0a;
+  --color-primary: #00afdb;
+  --color-secondary: #009688;
+  --color-white: white;
+  --color-danger: #de2f2f;
+  --color-soft: #dadada;
+  --color-dark: #31264e;
+  --theme-base-transition: background-color 0.2s ease-out;
+  --full-base-transition: all 0.2s ease-out;
+}
+
+.theme--dark {
+  --color-base: #ebf4f1;
+  --color-white: #170e2a;
+  --color-soft: #393540;
+  --color-dark: #dcd4ee;
+}
+
+$--font-size: 16px;
+$body-font-family: 'Inconsolata', monospace;
