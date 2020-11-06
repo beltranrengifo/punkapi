@@ -59,9 +59,10 @@ export default {
 <style lang="scss" scoped>
 .pa-grid {
   display: grid;
-  grid-gap: rem(12);
+  grid-column-gap: rem(12);
+  grid-row-gap: rem(32);
   grid-auto-rows: minmax(100px, auto);
   max-width: 100%;
-  margin: rem(48) auto 0;
+  margin: 0 auto;
 }
 </style>
