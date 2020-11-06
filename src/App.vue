@@ -1,46 +1,40 @@
 <template>
   <v-app>
     <pa-header />
-    <pa-drawer />
-    <v-main>
-      <!-- Provides the application the proper gutter -->
-      <v-container fluid></v-container>
-    </v-main>
+
+    <pa-main />
 
     <v-footer app>
-      <pa-theme-switcher />
+      <pa-switcher
+        icon="mdi-theme-light-dark"
+        @handle-value="$vuetify.theme.dark = !$vuetify.theme.dark"
+      />
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import PaHeader from '@/components/PaHeader'
-import PaDrawer from '@/components/PaDrawer'
-import PaThemeSwitcher from '@/components/PaThemeSwitcher'
+import PaMain from '@/components/PaMain'
+import PaSwitcher from '@/components/PaSwitcher'
 
 export default {
   name: 'App',
 
   components: {
     PaHeader,
-    PaDrawer,
-    PaThemeSwitcher,
+    PaMain,
+    PaSwitcher,
   },
 
   async created() {
     this.setTitle()
-    await this.fetchBeers()
   },
 
   methods: {
     setTitle() {
       document.title = this.$store.state.common.DEFAULT_TITLE
     },
-
-    ...mapActions({
-      fetchBeers: 'punkapi/fetchBeers',
-    }),
   },
 }
 </script>

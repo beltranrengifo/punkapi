@@ -6,32 +6,16 @@ exports[`App App should match the snapshot 1`] = `
 >
   <pa-header-stub />
    
-  <pa-drawer-stub />
-   
-  <v-main-stub
-    tag="main"
-  >
-    <v-container-stub
-      fluid="true"
-      tag="div"
-    />
-  </v-main-stub>
+  <pa-main-stub />
    
   <v-footer-stub
     app="true"
     height="auto"
     tag="footer"
   >
-    <v-btn-stub
-      activeclass=""
-      icon="true"
-      tag="button"
-      type="button"
-    >
-      <v-icon-stub>
-        mdi-theme-light-dark
-      </v-icon-stub>
-    </v-btn-stub>
+    <pa-switcher-stub
+      icon="mdi-theme-light-dark"
+    />
   </v-footer-stub>
 </v-app-stub>
 `;
