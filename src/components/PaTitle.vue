@@ -6,6 +6,7 @@
       'pa-title--upper': upper,
       'pa-title--underline': useLine,
     }"
+    :data-subtitle="subtext"
   >
     {{ text }}
   </component>
@@ -19,6 +20,10 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+    subtext: {
+      type: String,
+      default: '',
     },
     tag: {
       type: String,
@@ -53,9 +58,18 @@ export default {
       width: 100%;
       height: 4px;
       background-color: var(--color-primary);
-      bottom: -24px;
+      bottom: -40px;
       z-index: 1;
     }
+  }
+  &:before {
+    content: attr(data-subtitle);
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: rem(10);
+    white-space: pre;
   }
 }
 </style>
