@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component Component should match the snapshot 1`] = `
+<section
+  class="pa-error text-center"
+>
+  <h2
+    class="mb-8"
+  >
+    
+    Error: Not funny
+  
+  </h2>
+   
+  <p>
+    
+    Not funny :(
+  
+  </p>
+</section>
+`;
