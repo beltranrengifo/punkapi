@@ -3,11 +3,15 @@ import http from '@/utils/http'
 const state = () => ({
   beers: [],
   pageNum: 1,
+  error: false,
 })
 
 const getters = {
   getBeers(state) {
     return state.beers
+  },
+  getError(state) {
+    return state.error
   },
 }
 
@@ -18,6 +22,7 @@ const actions = {
       commit('SET_BEERS', data)
     } catch (e) {
       console.error(e)
+      commit('SET_ERROR', e)
     }
   },
 }
@@ -25,6 +30,9 @@ const actions = {
 const mutations = {
   'SET_BEERS'(state, beers) {
     state.beers = beers
+  },
+  'SET_ERROR'(state, error) {
+    state.error = error
   },
 }
 
