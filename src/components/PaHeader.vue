@@ -3,6 +3,7 @@
     <pa-logo />
     <pa-title
       :text="$store.state.common.DEFAULT_TITLE"
+      subtext="Made with Vue.js ❤️"
       use-line
       tag="h1"
       upper
