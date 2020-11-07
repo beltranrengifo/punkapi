@@ -3,7 +3,7 @@
     <pa-logo />
     <pa-title
       :text="$store.state.common.DEFAULT_TITLE"
-      subtext="Made with Vue.js ❤️"
+      subtext="Made with ❤️ & Vue.js"
       use-line
       tag="h1"
       upper
@@ -31,6 +31,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: rem(32) 0;
+  padding: rem(32) 0 rem(48);
 }
 </style>

@@ -2,6 +2,7 @@
   <main class="pa-main">
     <pa-grid v-if="beers && beers.length" :items="beers" />
     <pa-error v-else-if="error" :error="error" />
+    <pa-no-results v-else-if="!beers.length" text="No beers around :(" />
   </main>
 </template>
 
@@ -9,6 +10,7 @@
 import { mapActions, mapGetters } from 'vuex'
 import PaGrid from '@/components/PaGrid'
 import PaError from '@/components/PaError'
+import PaNoResults from '@/components/PaNoResults'
 
 export default {
   name: 'PaMain',
@@ -16,6 +18,7 @@ export default {
   components: {
     PaGrid,
     PaError,
+    PaNoResults,
   },
 
   async created() {

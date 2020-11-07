@@ -2,6 +2,8 @@
   <v-app>
     <pa-header />
 
+    <pa-filters title="Filter beers" />
+
     <pa-main />
 
     <v-footer app>
@@ -15,6 +17,7 @@
 
 <script>
 import PaHeader from '@/components/PaHeader'
+import PaFilters from '@/components/PaFilters'
 import PaMain from '@/components/PaMain'
 import PaSwitcher from '@/components/PaSwitcher'
 
@@ -23,6 +26,7 @@ export default {
 
   components: {
     PaHeader,
+    PaFilters,
     PaMain,
     PaSwitcher,
   },
