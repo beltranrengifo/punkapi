@@ -17,10 +17,12 @@ const getters = {
 }
 
 const actions = {
-  async fetchBeers({ commit, state }, { params } = {
-    page: state.pageNum,
-    per_page: state.perPage,
-  }) {
+  async fetchBeers({ commit, state }, payload) {
+    const params = (payload && payload.params) || {
+      page: state.pageNum,
+      per_page: state.perPage,
+    }
+
     try {
       const { data } = await http().get('/beers', { params })
       commit('SET_BEERS', data)
