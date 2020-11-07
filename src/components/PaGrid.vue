@@ -11,7 +11,6 @@
 </template>
 
 <script>
-/* eslint-disable indent */
 import PaGridItem from '@/components/PaGridItem'
 import Responsive from '@/mixins/responsive'
 
