@@ -56,9 +56,9 @@ export default {
       position: absolute;
       left: 0;
       width: 100%;
-      height: 6px;
+      height: 4px;
       background-color: var(--color-primary);
-      bottom: -40px;
+      bottom: -48px;
       z-index: 1;
       border-radius: 6px;
     }
@@ -66,7 +66,7 @@ export default {
   &:before {
     content: attr(data-subtitle);
     position: absolute;
-    bottom: -28px;
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
     font-size: rem(10);
