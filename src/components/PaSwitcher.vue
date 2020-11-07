@@ -6,7 +6,7 @@
     <v-switch
       v-else
       v-model="value"
-      inset
+      color="var(--color-primary)"
       :label="label"
       @click="$emit('handle-value', value)"
     />

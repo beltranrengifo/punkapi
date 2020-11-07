@@ -4,13 +4,10 @@
       v-model="query"
       :label="label"
       clearable
-      filled
-      rounded
-      dense
-      height="20px"
       color="var(--color-primary)"
       :hint="hint"
       @input="handleSearch"
+      class="pa-search__input"
     />
   </article>
 </template>
@@ -55,4 +52,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.pa-search {
+  &__input {
+    @include input;
+  }
+}
+</style>
