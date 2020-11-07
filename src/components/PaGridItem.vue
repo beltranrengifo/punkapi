@@ -8,6 +8,12 @@
       rounded="4"
       flat
     >
+      <v-badge
+        v-if="alcoholFree"
+        color="indigo"
+        content="0%"
+        class="pa-grid-item__badge"
+      />
       <v-img
         :src="item.image_url"
         height="200px"
@@ -97,6 +103,10 @@ export default {
         Object.keys(this.item).length > 0
       )
     },
+
+    alcoholFree() {
+      return this.item.abv < 1
+    },
   },
 }
 </script>
@@ -114,6 +124,15 @@ export default {
   &__title,
   &__subtitle {
     cursor: pointer;
+  }
+  &__badge {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    .v-badge__badge {
+      font-size: rem(14);
+      font-weight: 600;
+    }
   }
 }
 </style>
