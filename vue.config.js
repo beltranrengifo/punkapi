@@ -11,6 +11,7 @@ module.exports = {
         .options({
           resources: [
             'src/scss/settings/_mixins.scss',
+            'src/scss/base/_inputs.scss',
           ],
         })
         .end()
