@@ -9,6 +9,7 @@
     <v-footer app>
       <pa-switcher
         icon="mdi-theme-light-dark"
+        useIcon
         @handle-value="$vuetify.theme.dark = !$vuetify.theme.dark"
       />
     </v-footer>
