@@ -56,10 +56,11 @@ export default {
       position: absolute;
       left: 0;
       width: 100%;
-      height: 4px;
+      height: 6px;
       background-color: var(--color-primary);
       bottom: -40px;
       z-index: 1;
+      border-radius: 6px;
     }
   }
   &:before {
