@@ -5,7 +5,7 @@
       max-width="100%"
       :width="itemWidth"
       class="pa-grid-item"
-      rounded="0"
+      rounded="4"
       flat
     >
       <v-img
@@ -42,7 +42,10 @@
           <v-divider></v-divider>
 
           <v-card-text>
-            {{ item.description | truncate(145) }}
+            <p class="mb-1">First brewed in {{ item.first_brewed }}.</p>
+            <p class="mb-0">
+              {{ item.description | truncate(145) }}
+            </p>
           </v-card-text>
         </div>
       </v-expand-transition>
@@ -100,12 +103,12 @@ export default {
 
 <style lang="scss" scoped>
 .pa-grid-item {
-  filter: grayscale(100%);
+  filter: grayscale(70%);
   transition: all 0.2s ease-out;
   &:hover {
     filter: grayscale(0);
     /* Vuetify is using importants for modifiers :( */
-    box-shadow: 0px 16px 34px -18px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0px 16px 34px -18px var(--card-hover-shadow) !important;
   }
   &__image,
   &__title,

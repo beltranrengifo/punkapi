@@ -8,6 +8,7 @@
   --color-dark: #31264e;
   --theme-base-transition: background-color 0.2s ease-out;
   --full-base-transition: all 0.2s ease-out;
+  --card-hover-shadow: rgba(0, 0, 0, 0.2);
 }
 
 .theme--dark {
@@ -15,6 +16,7 @@
   --color-white: #170e2a;
   --color-soft: #393540;
   --color-dark: #dcd4ee;
+  --card-hover-shadow: rgba(138, 138, 138, 0.4);
 }
 
 $--font-size: 16px;
