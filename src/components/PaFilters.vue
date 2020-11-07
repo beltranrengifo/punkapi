@@ -8,6 +8,7 @@
       hint="Minimum of 3 characters"
     />
     <pa-switcher @handle-value="searchByAbv" label="Non-Alcoholic Beers" />
+    <pa-picker label="Brewed by date range" @handlePicker="searchByDateRange" />
   </section>
 </template>
 
@@ -15,6 +16,7 @@
 import { mapActions } from 'vuex'
 import PaSearch from '@/components/PaSearch'
 import PaSwitcher from '@/components/PaSwitcher'
+import PaPicker from '@/components/PaPicker'
 
 export default {
   name: 'PaFilters',
@@ -22,6 +24,7 @@ export default {
   components: {
     PaSearch,
     PaSwitcher,
+    PaPicker,
   },
 
   props: {
@@ -59,6 +62,19 @@ export default {
       this.fetchBeers(params)
     },
 
+    async searchByDateRange(dates) {
+      console.log({
+        params: {
+          ...dates,
+        },
+      })
+      await this.fetchBeers({
+        params: {
+          ...dates,
+        },
+      })
+    },
+
     ...mapActions({
       fetchBeers: 'punkapi/fetchBeers',
     }),
@@ -66,4 +82,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.pa-filters {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: rem(48);
+}
+</style>
