@@ -2,7 +2,11 @@
   <main class="pa-main">
     <pa-grid v-if="beers && beers.length" :items="beers" />
     <pa-error v-else-if="error" :error="error" />
-    <pa-no-results v-else-if="!beers.length" text="No beers around :(" />
+    <pa-no-results
+      v-else-if="!beers.length"
+      text="No beers around :("
+      subtext="Try again!"
+    />
   </main>
 </template>
 

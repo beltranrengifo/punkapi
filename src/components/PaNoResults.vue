@@ -3,8 +3,8 @@
     <h2 class="mb-8">
       {{ text }}
     </h2>
-    <p>
-      Try again!
+    <p v-if="subtext">
+      {{ subtext }}
     </p>
   </section>
 </template>
@@ -18,8 +18,10 @@ export default {
       type: String,
       default: 'Nothing found',
     },
+    subtext: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
-
-<style lang="scss" scoped></style>
