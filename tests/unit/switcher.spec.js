@@ -5,7 +5,7 @@ import PaSwitcher from '@/components/PaSwitcher'
 
 Vue.use(Vuetify)
 
-describe('Theme Switcher with icon', () => {
+describe('Switcher with icon', () => {
   let wrapper
 
   beforeEach(() => {
@@ -40,7 +40,7 @@ describe('Theme Switcher with icon', () => {
   })
 })
 
-describe('Theme Switcher with v-switch', () => {
+describe('Switcher with v-switch', () => {
   let wrapper
 
   beforeEach(() => {
