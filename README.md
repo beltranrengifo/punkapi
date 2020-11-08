@@ -33,6 +33,7 @@ Skeletons are implemented in grid items in case of slow network speeds.
 
 - Caching data from server responses is not implemented, yet.
 - Fully responsive.
+- More units
 
 ## Project setup
 
