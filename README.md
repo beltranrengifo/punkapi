@@ -1,5 +1,10 @@
 # PunkApi Catalogue made with Vue.js
 
+![Branches badge](./reports/unit/coverage/badges/badge-branches.svg)
+![Functions badge](./reports/unit/coverage/badges/badge-functions.svg)
+![Lines badge](./reports/unit/coverage/badges/badge-lines.svg)
+![Statements badge](./reports/unit/coverage/badges/badge-statements.svg)
+
 ## Description
 
 Showcase beers from public resources of Punk Api.
@@ -10,7 +15,7 @@ Three filters are provided, by name, by non-alcoholic items and by brewed date r
 
 Responsive version is not fully revised. A `responsive.js` mixin in used for the main grid breakpoints, so this component is supposed to work fine in all resolutions. some elements could break, specially in small mobile resolutions.
 
-Dark theme madre with Vuetify `theme.dark` and CSS custom properties. Will not work in IE11.
+Dark theme made with Vuetify `theme.dark` and CSS custom properties. Will not work in IE11.
 
 Components use BEM for preventing global style conflicts. Also `scope` prop is in use.
 
@@ -18,8 +23,8 @@ Skeletons are implemented in grid items in case of slow network speeds.
 
 ## Uses
 
-- Unit testing with Jest
-- Some components imported from Vuetify, some custom made
+- Unit testing with Jest.
+- Some components imported from Vuetify, some custom made.
 - Vuex with two modules:
   - Punkapi module for managing the beers store
   - Common module for general purpose store
@@ -59,13 +64,3 @@ yarn build
 yarn unit
 yarn unit:cov
 ```
-
-### Lints and fixes files
-
-```
-yarn lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).

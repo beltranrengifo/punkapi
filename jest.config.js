@@ -14,4 +14,9 @@ module.exports = {
   snapshotSerializers: ['jest-serializer-vue'],
   coverageDirectory: path.resolve(__dirname, 'reports/unit/coverage'),
   verbose: true,
+  coverageReporters: [
+    'json-summary',
+    'text',
+    'lcov',
+  ],
 }
