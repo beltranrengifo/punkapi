@@ -6,6 +6,10 @@ exports[`App App should match the snapshot 1`] = `
 >
   <pa-header-stub />
    
+  <pa-filters-stub
+    title="Filter beers"
+  />
+   
   <pa-main-stub />
    
   <v-footer-stub
@@ -15,6 +19,8 @@ exports[`App App should match the snapshot 1`] = `
   >
     <pa-switcher-stub
       icon="mdi-theme-light-dark"
+      label=""
+      useicon="true"
     />
   </v-footer-stub>
 </v-app-stub>
