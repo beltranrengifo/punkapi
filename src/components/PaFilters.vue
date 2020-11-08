@@ -82,5 +82,10 @@ export default {
   display: flex;
   justify-content: space-evenly;
   margin-top: rem(48);
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

@@ -125,6 +125,9 @@ export default {
     grid-row-gap: rem(12);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     li {
       border-bottom: 1px dotted #dfdfdf;
       border-right: 1px dotted #dfdfdf;
