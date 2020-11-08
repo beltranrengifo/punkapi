@@ -1,6 +1,5 @@
 const state = () => ({
   DEFAULT_TITLE: 'PunkApi',
-  showDrawer: false,
   modalContent: null,
 })
 
