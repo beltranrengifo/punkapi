@@ -1,6 +1,10 @@
 <template>
   <main class="pa-main">
-    <pa-grid v-if="beers && beers.length" :items="beers" />
+    <pa-grid
+      v-if="beers && beers.length"
+      :items="beers"
+      @handle-more="loadMore"
+    />
     <pa-error v-else-if="error" :error="error" />
     <pa-no-results
       v-else-if="!beers.length"
@@ -8,6 +12,12 @@
       subtext="Try again!"
     />
     <pa-modal-beer />
+
+    <pa-floating-action
+      text="TRY!"
+      @handle-click="getRandom"
+      :loading="loadingButton"
+    />
   </main>
 </template>
 
@@ -17,6 +27,7 @@ import PaGrid from '@/components/PaGrid'
 import PaError from '@/components/PaError'
 import PaNoResults from '@/components/PaNoResults'
 import PaModalBeer from '@/components/PaModalBeer'
+import PaFloatingAction from '@/components/PaFloatingAction'
 
 export default {
   name: 'PaMain',
@@ -26,6 +37,14 @@ export default {
     PaError,
     PaNoResults,
     PaModalBeer,
+    PaFloatingAction,
+  },
+
+  data() {
+    return {
+      page: 1,
+      loadingButton: false,
+    }
   },
 
   async created() {
@@ -42,7 +61,23 @@ export default {
   methods: {
     ...mapActions({
       fetchBeers: 'punkapi/fetchBeers',
+      fetchRandom: 'punkapi/fetchRandom',
+      setModalContent: 'common/setModalContent',
     }),
+
+    loadMore() {
+      this.fetchBeers({
+        loadMore: true,
+        params: { page: ++this.page, per_page: 20 },
+      })
+    },
+
+    async getRandom() {
+      this.loadingButton = true
+      const random = await this.fetchRandom()
+      this.setModalContent(random)
+      this.loadingButton = false
+    },
   },
 }
 </script>
