@@ -1,13 +1,26 @@
 <template>
-  <section class="pa-grid" :style="getStyles">
-    <pa-grid-item
-      v-for="item in items"
-      :key="item.id"
-      :item="item"
-      :parent-width="width"
-      :columns="columns"
-    />
-  </section>
+  <div>
+    <section class="pa-grid" :style="getStyles">
+      <pa-grid-item
+        v-for="item in items"
+        :key="item.id"
+        :item="item"
+        :parent-width="width"
+        :columns="columns"
+      />
+    </section>
+    <section class="text-center mt-14">
+      <v-btn
+        color="orange lighten-2"
+        text
+        outlined
+        @click="$emit('handle-more')"
+      >
+        Load more
+        <v-badge color="amber darken-3" :content="items.length" offset-y="-8" />
+      </v-btn>
+    </section>
+  </div>
 </template>
 
 <script>
