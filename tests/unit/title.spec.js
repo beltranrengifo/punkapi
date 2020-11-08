@@ -11,6 +11,7 @@ describe('Titlet', () => {
         tag: 'h1',
         upper: true,
         useLine: true,
+        subtext: 'My subtext',
       },
     })
   })
@@ -26,6 +27,10 @@ describe('Titlet', () => {
 
   it('Title should render proper text', () => {
     expect(wrapper.text()).toBe('My title')
+  })
+
+  it('Title should render proper subtext', () => {
+    expect(wrapper.attributes('data-subtitle')).toBe('My subtext')
   })
 
   it('Title should render proper css classes', () => {

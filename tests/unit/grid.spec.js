@@ -18,26 +18,25 @@ describe('Grid component', () => {
     })
   })
   it('Component should render grid item component', () => {
-    expect(wrapper.findComponent({ name: 'pa-grid-item' })).toBeTruthy()
+    const c = wrapper.findComponent({ name: 'pa-grid-item' })
+    expect(c.exists()).toBe(true)
   })
 
   it('Component should render a grid item component for each item in array', () => {
     const childs = wrapper.findAllComponents({ name: 'pa-grid-item' })
     expect(childs).toHaveLength(beers.length)
   })
-  /* it('Component should emit custom event on cick', async () => {
-    wrapper.findComponent({ name: 'v-btn' }).trigger('click')
-    await wrapper.vm.$nextTick()
-    expect(wrapper.emitted()['handle-value']).toBeTruthy()
-  })
 
-  it('Component should render a mdi icon', () => {
-    expect(wrapper.findComponent({ name: 'v-icon' })).toBeTruthy()
-    wrapper.findComponent({ name: 'v-icon' }).text('mdi-toggle-switch')
+  it('Component should render load more btn', () => {
+    const c = wrapper.findComponent({ name: 'v-btn' })
+    expect(c.exists()).toBe(true)
   })
-
-  it('Component should render proper mdi icon', () => {
-    expect(wrapper.findComponent({ name: 'v-icon' })).toBeTruthy()
-    wrapper.findComponent({ name: 'v-icon' }).text('mdi-theme-light-dark')
-  }) */
+  it('Component should render the proper width', () => {
+    wrapper.setData({ isBigDesktop: true })
+    expect(wrapper.vm.width).toBe(1280)
+  })
+  it('Component should render the proper columns number', () => {
+    wrapper.setData({ isBigDesktop: true })
+    expect(wrapper.vm.columns).toBe(4)
+  })
 })

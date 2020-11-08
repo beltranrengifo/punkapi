@@ -16,9 +16,6 @@ const actions = {
 }
 
 const mutations = {
-  'HANDLE_DRAWER'(state) {
-    state.showDrawer = !state.showDrawer
-  },
   'SET_MODAL_CONTENT'(state, content) {
     state.modalContent = content
   },

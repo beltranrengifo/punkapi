@@ -26,7 +26,8 @@ describe('App', () => {
   })
 
   it('App works and is mounting Vuetify components', () => {
-    expect(wrapper.findComponent({ name: 'v-app' })).toBeTruthy()
+    const c = wrapper.findComponent({ name: 'v-app' })
+    expect(c.exists()).toBe(true)
   })
 
   it('App should match the snapshot', () => {

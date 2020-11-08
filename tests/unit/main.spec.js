@@ -10,7 +10,7 @@ const localVue = createLocalVue()
 Vue.use(Vuetify)
 localVue.use(Vuex)
 
-describe('App', () => {
+describe('Main component', () => {
   let actions
   let getters
   let store
@@ -18,7 +18,10 @@ describe('App', () => {
 
   beforeEach(() => {
     actions = { 'punkapi/fetchBeers': jest.fn() }
-    getters = { 'punkapi/getBeers': jest.fn() }
+    getters = {
+      'punkapi/getBeers': jest.fn(),
+      'punkapi/getError': jest.fn(),
+   }
     store = new Vuex.Store({
       state: {
         common: {
@@ -32,15 +35,21 @@ describe('App', () => {
       localVue,
       store,
       computed: {
-        beers() {
-          return [{ id: 1 }, { id: 2 }]
+        beers: {
+          get() {
+            return [{ id: 1 }, { id: 2 }]
+          },
+          set(val) {
+            return val
+          }
         },
       },
     })
   })
 
   it('Main works and contains proper tag', () => {
-    expect(wrapper.find('main')).toBeTruthy()
+    const main = wrapper.find('main')
+    expect(main.exists()).toBe(true)
   })
 
   it('Main should match the snapshot', () => {
@@ -49,5 +58,52 @@ describe('App', () => {
 
   it('Main dispatches fetchBeers when instance is created', () => {
     expect(actions['punkapi/fetchBeers']).toHaveBeenCalled()
+  })
+
+  it('Main should render no-results component if no beers in array', () => {
+    const wrapper = shallowMount(PaMain, {
+      localVue,
+      store,
+      computed: {
+        beers: {
+          get() {
+            return []
+          },
+          set(val) {
+            return val
+          }
+        },
+      },
+    })
+
+    const c = wrapper.findComponent({name: 'pa-no-results'})
+    expect(c.exists()).toBe(true)
+  })
+  it('Main should render error component if error', () => {
+    const wrapper = shallowMount(PaMain, {
+      localVue,
+      store,
+      computed: {
+        beers: {
+          get() {
+            return []
+          },
+          set(val) {
+            return val
+          }
+        },
+        error: {
+          get() {
+            return new Error('Hi!')
+          },
+          set(val) {
+            return val
+          }
+        },
+      },
+    })
+
+    const c = wrapper.findComponent({name: 'pa-error'})
+    expect(c.exists()).toBe(true)
   })
 })
