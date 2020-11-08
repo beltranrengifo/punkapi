@@ -32,8 +32,8 @@
       </v-card-subtitle>
 
       <v-card-actions>
-        <v-btn color="orange lighten-2" text>
-          More details
+        <v-btn color="orange lighten-2" text @click="setModalContent(item)">
+          Full details
         </v-btn>
 
         <v-spacer></v-spacer>
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'PaGridItem',
 
@@ -107,6 +109,12 @@ export default {
     alcoholFree() {
       return this.item.abv < 1
     },
+  },
+
+  methods: {
+    ...mapActions({
+      setModalContent: 'common/setModalContent',
+    }),
   },
 }
 </script>

@@ -8,7 +8,7 @@
       hint="Minimum of 3 characters"
     />
     <pa-switcher @handle-value="searchByAbv" label="Non-Alcoholic Beers" />
-    <pa-picker label="Brewed by date range" @handlePicker="searchByDateRange" />
+    <pa-picker label="Brewed by date" @handlePicker="searchByDateRange" />
   </section>
 </template>
 
@@ -63,11 +63,6 @@ export default {
     },
 
     async searchByDateRange(dates) {
-      console.log({
-        params: {
-          ...dates,
-        },
-      })
       await this.fetchBeers({
         params: {
           ...dates,

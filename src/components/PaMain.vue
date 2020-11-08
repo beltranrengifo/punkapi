@@ -7,6 +7,7 @@
       text="No beers around :("
       subtext="Try again!"
     />
+    <pa-modal-beer />
   </main>
 </template>
 
@@ -15,6 +16,7 @@ import { mapActions, mapGetters } from 'vuex'
 import PaGrid from '@/components/PaGrid'
 import PaError from '@/components/PaError'
 import PaNoResults from '@/components/PaNoResults'
+import PaModalBeer from '@/components/PaModalBeer'
 
 export default {
   name: 'PaMain',
@@ -23,6 +25,7 @@ export default {
     PaGrid,
     PaError,
     PaNoResults,
+    PaModalBeer,
   },
 
   async created() {

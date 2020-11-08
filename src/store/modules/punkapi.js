@@ -5,6 +5,7 @@ const state = () => ({
   pageNum: 1,
   perPage: 20,
   error: false,
+  currentBeer: null,
 })
 
 const getters = {
