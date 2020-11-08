@@ -10,7 +10,7 @@
     >
       <v-card tile class="pa-modal__card">
         <v-toolbar
-          :src="content.image_url || ''"
+          :src="content.image_url || defaultImage"
           flat
           dark
           color="var(--color-primary)"
@@ -67,6 +67,10 @@ export default {
       set(val) {
         return val
       },
+    },
+
+    defaultImage() {
+      return require('@/assets/images/bottle.png')
     },
 
     ...mapGetters({
