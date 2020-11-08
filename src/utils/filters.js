@@ -7,8 +7,10 @@ const capitalize = (value) => {
 }
 
 const truncate = (text, limit, clamp = '...') => {
-  if (text.length < limit) return text
-  return text.substring(0, limit) + clamp
+  const node = document.createElement('div')
+  node.innerHTML = text
+  const content = node.textContent
+  return content.length > limit ? content.slice(0, limit) + clamp : content
 }
 
 export {

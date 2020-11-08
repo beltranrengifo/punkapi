@@ -24,11 +24,11 @@
       />
 
       <v-card-title class="pa-grid-item__title" @click="show = !show">
-        {{ item.name | truncate(25) }}
+        {{ truncate(item.name, 25) }}
       </v-card-title>
 
       <v-card-subtitle class="pa-grid-item__subtitle" @click="show = !show">
-        {{ item.tagline | truncate(35) }}
+        {{ truncate(item.tagline, 35) }}
       </v-card-subtitle>
 
       <v-card-actions>
@@ -50,7 +50,7 @@
           <v-card-text>
             <p class="mb-1">First brewed in {{ item.first_brewed }}.</p>
             <p class="mb-0">
-              {{ item.description | truncate(145) }}
+              {{ truncate(item.description, 145) }}
             </p>
           </v-card-text>
         </div>
@@ -68,7 +68,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-
+import { truncate } from '@/utils/filters'
 export default {
   name: 'PaGridItem',
 
@@ -115,6 +115,9 @@ export default {
     ...mapActions({
       setModalContent: 'common/setModalContent',
     }),
+    truncate(val, limit) {
+      return truncate(val, limit)
+    },
   },
 }
 </script>
