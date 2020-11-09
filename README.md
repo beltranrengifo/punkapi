@@ -4,6 +4,7 @@
 ![Functions badge](./reports/unit/coverage/badges/badge-functions.svg)
 ![Lines badge](./reports/unit/coverage/badges/badge-lines.svg)
 ![Statements badge](./reports/unit/coverage/badges/badge-statements.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e2ecb8c-f6c8-43f0-80a2-bcb9be4085a6/deploy-status)](https://app.netlify.com/sites/punkapi/deploys)
 
 ## Description
 
