@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import PaTitle from '@/components/PaTitle'
 
-describe('Titlet', () => {
+describe('Title component', () => {
   let wrapper
 
   beforeEach(() => {

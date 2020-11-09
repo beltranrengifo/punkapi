@@ -42,23 +42,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
-  name: 'PaModal',
-
-  data() {
-    return {
-      stringProps: [
-        'first_brewed',
-        'abv',
-        'ibu',
-        'ph',
-        'attenuation_level',
-        'ingredients',
-        'food_pairing',
-        'brewers_tips',
-      ],
-    }
-  },
-
+  name: 'PaModalBase',
   computed: {
     hasContent: {
       get() {

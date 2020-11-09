@@ -7,7 +7,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "unit": "vue-cli-service test:unit",
-    "unit:cov": "vue-cli-service test:unit --coverage && jest-coverage-badges --input './reports/unit/coverage/coverage-summary.json' --output './reports/unit/coverage/badges'",
+    "unit:cov": "vue-cli-service test:unit --coverage",
+    "unit:cov:badges": "vue-cli-service test:unit --coverage && jest-coverage-badges --input './reports/unit/coverage/coverage-summary.json' --output './reports/unit/coverage/badges'",
     "unit:cov--watch": "vue-cli-service test:unit --coverage --watch",
     "lint": "vue-cli-service lint"
   },

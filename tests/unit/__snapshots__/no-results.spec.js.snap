@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaNoResults component Component should match the snapshot 1`] = `
+<section
+  class="pa-no-results text-center"
+>
+  <h2
+    class="mb-8"
+  >
+    
+    No results
+  
+  </h2>
+   
+  <p>
+    
+    My subtext
+  
+  </p>
+</section>
+`;

@@ -15,7 +15,8 @@ describe('Error component', () => {
   })
 
   it('Component should find the title', () => {
-    expect(wrapper.find('h2')).toBeTruthy()
+    const title = wrapper.find('h2')
+    expect(title.name()).toBe('h2')
   })
 
   it('Component should render the error', () => {
